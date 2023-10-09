@@ -1,0 +1,194 @@
+.form-title {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.login-form {
+    text-align: center;
+    width: auto;
+    margin-top: -16px;
+}
+
+.mat-card-container {
+    display: flex;
+    justify-content: center; /* Yatayda ortala */
+    align-items: center; /* Dikeyde ortala */
+    height: 100vh; /* Sayfanın tamamını kaplayacak şekilde yükseklik belirle */
+    margin-left: -100px;
+    margin-top: 50px;
+  }
+
+/* Kartın genişliğini belirlemek için (isteğe bağlı) */
+mat-card {
+    max-width: 1000px;
+    width: 400px;
+    border: 2px solid #ccc;
+    /* Çerçevenin stilini ve rengini ayarlayın */
+    border-radius: 10px;
+    /* Çerçevenin köşe yuvarlatmasını belirleyin */
+    padding: 5px;
+    /* Kartın içeriğinden çerçeveye olan boşluğu belirleyin */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    /* Kartın gölgesini ayarlayın */
+    /* width: 500px; /* Dilediğiniz boyutu verebilirsiniz */
+    /*height: 400px; /* Dilediğiniz boyutu verebilirsiniz */
+    margin: 90px -4px auto 10px;
+    /* Yatayda ortalamak için 10px bottom boşluk (alt boşluk) verir */
+    /*margin: auto auto auto auto; (top,right,bottom,left)*/
+    /* Kartı ortalamak için */
+    z-index: 2;
+    /* margin: top 10px; */
+    opacity: 0.9
+    
+}
+.custom-card {
+    width: 517px; /* İstenilen genişlik */
+    height: 517px;/* İstenilen yükseklik */
+    opacity: 0.9;
+    /* background-color: rgb(224, 48, 77); */
+   
+  }
+
+.form-title {
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+.form-container {
+    display: flex;
+    /* flex-wrap: wrap; */
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.form-field {
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 20px;
+    /* İnput alanlarının arasındaki boşluğu ayarlamak için */
+    /* flex: 1 1 calc(50% - 10px); */
+
+}
+
+.form-field .mat-icon {
+    cursor: pointer;
+}
+
+.align-end {
+    align-self: flex-end;
+}
+
+/* Örneğin, formun üzerinde boşluk bırakmak için */
+.registration-form {
+    margin-top: 20px;
+}
+
+/* Form içindeki tüm input alanlarının genişliğini ayarlamak için */
+.genis-input {
+    width: 100%;
+}
+
+.backgroundImage_1 {
+    /* background-image: url('src/assets/images/registerBackground_2.jpg'); */
+    background-image: url('src/assets/images/background_6.png');/* Arka plan resmini belirtilen URL'den alır */
+    position: absolute;
+    /* Elementin konumu "position: absolute" ile belirtilir */
+    /* ile belirtilen element, içinde bulunduğu en yakın konumlandırılmış üst öğeye göre konumlanır ve normal akıştan çıkar. */
+    /* height: 100%; *//* Elementin yüksekliği yüzde olarak ayarlanır */
+    background-size: cover; /* Arka plan resminin boyutunu kaplamak için ölçekler */
+    margin-top: -12px;/* Elementin üst kenarını 12 piksel yukarı çeker */
+    /* margin: 54px 435px 52px; */
+    /* opacity: 0.89; */
+    width: 81%;
+    height: 93%;
+    /* margin: 54px 435px 52px; */
+    background-position: center;
+    /* opacity: 1.55; */
+}
+
+
+.backgroundImage_2{
+
+     /* background-image: url('src/assets/images/registerBackground_2.jpg'); */
+     background-image: url('src/assets/images/log-in.png');
+     
+     /* Arka plan resmini belirtilen URL'den alır */
+     /* width: 100%; */
+     /* Elementin genişliği yüzde olarak ayarlanır */
+     position: absolute;
+     /* Elementin konumu "position: absolute" ile belirtilir */
+     /* ile belirtilen element, içinde bulunduğu en yakın konumlandırılmış üst öğeye göre konumlanır ve normal akıştan çıkar. */
+     /* height: 100%; */
+     /* Elementin yüksekliği yüzde olarak ayarlanır */
+     background-size: auto;
+     background-position: center center;
+     background-repeat: no-repeat;
+     /* Arka plan resminin boyutunu kaplamak için ölçekler */
+     margin-top: -12px;
+     /* Elementin üst kenarını 12 piksel yukarı çeker */
+     width: 100%;
+     height: 100%;
+     /* margin: 54px 435px 52px; */
+     /* opacity: 0.89; */
+     /* margin-left: 83px; */
+   
+
+}
+
+
+.custom-hint {
+    background-color: #fff;
+    color: #ff0000;
+    border: 1px solid #ff0000;
+    padding: 5px 10px;
+    border-radius: 4px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.form-field:hover .custom-hint,
+.genis-input:focus+.custom-hint {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.button-kaydol {
+    background-color: green;
+    color: white;
+
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    /* Gerekirse düzenleyebilirsiniz */
+}
+
+.span-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+
+    /* position: absolute; */
+    top: 0;
+    left: 0;
+    color: green;
+    opacity: 0.5;
+    font-size: 14px;
+}

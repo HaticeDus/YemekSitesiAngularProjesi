@@ -1,0 +1,55 @@
+swiper-slide {
+    display: flex;
+    justify-content: center;/*içeriği yatayda merkezler */
+    align-items: center;/* içeriği dikeyde merkezler*/
+    /* height: auto; */
+    height: 400px;
+    width: 120px; /* Örnek olarak 120px genişlik *//* Swiper slide'ların boyutunu ayarlayın */
+}
+
+swiper-container{
+  margin-bottom: 130px;
+}
+
+/* Özel stil için swiper-container'a bir sınıf ekleyin (örneğin "custom-swiper-container") */
+.custom-swiper-container {
+  max-width: 1492px; /* Maksimum genişlik */
+  margin: 0 auto; /* Ortalama için yatay marjin */
+}
+
+.category-card {
+    width: 200px;
+    /* background-color: #f2f2f2;*/
+    border: 1px solid #e27ac8; 
+    /* border-radius: 20px; */
+    /* padding: 30px; */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s; /* 0.3 saniyelik geçiş animasyonu için */
+    align-items: center;
+    cursor:pointer;
+  }
+ 
+  .category-card:hover {
+    transform: scale(1.1); /* Kartın tıklanınca %10 büyümesini sağlar */
+  }
+  
+  .category-header-image {
+    background-image: url('src/assets/images/restaurants.png');
+    background-size: cover;
+  }
+
+
+.custom-card-image {
+  width: 100%;
+  height: 156px; /* Önceden belirlenmiş bir yükseklik (örneğin 200 piksel) belirleyin */
+  object-fit: cover;/* Resmi tamamen kaplayacak şekilde ölçekleyin */
+  
+}
+
+.card-title{
+  font-size: 14px;
+}
+
+.card-subtitle{
+  font-size: 12px;
+}

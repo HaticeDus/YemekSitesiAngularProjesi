@@ -1,0 +1,21 @@
+<div id="background_1"></div>
+
+
+<swiper-container class="custom-swiper-container" navigation="true" pagination="true" pagination-clickable="true"
+    mousewheel-force-to-axis="true" slides-per-view="7" loop="true" css-mode="true">
+    <!-- speed="500" autoplay="true"  -->
+    <swiper-slide *ngFor="let item of kategorilerList">
+
+        <mat-card class="category-card" (click)="onCardClicked(item.kategoriID)">
+            <mat-card-header>
+                <div mat-card-avatar class="category-header-image"></div>
+                <mat-card-title class="card-title"> {{item.kategoriTuru}}</mat-card-title>
+                <mat-card-subtitle class="card-subtitle">kategoriler</mat-card-subtitle>
+            </mat-card-header>
+            <img class="custom-card-image" mat-card-image src="{{ item.kategoriImg }}" alt="{{item.kategoriTuru}}">
+        </mat-card>
+
+    </swiper-slide>
+</swiper-container>
+
+

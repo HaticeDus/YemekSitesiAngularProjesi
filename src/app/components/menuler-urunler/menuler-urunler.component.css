@@ -1,0 +1,102 @@
+h1 {
+  text-align: center;
+  color: crimson;
+  margin-bottom:5%;
+}
+
+.item-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  /* İkon ile metin arasındaki boşluğu ayarlayabilirsiniz */
+}
+
+/* .example-card {
+    max-width: 400px;
+    margin-bottom: 80px;
+    margin-left: 80px;
+} */
+
+.example-card {
+  width: 350px;
+  /* Card'ların genişliğini sabit 400px olarak belirleyin */
+  margin-bottom: 180px;
+  /* Card'lar arasında 80px boşluk bırakın */
+  margin-right: 80px;
+  /* Sağ taraftan da 80px boşluk bırakın (eğer sağa doğru da bir boşluk vermek istiyorsanız) */
+  margin-left: 100px;
+}
+
+/* Flexbox ile card'ları yan yana düzenleme */
+.card-container {
+  display: flex;
+  /* Flexbox kullan */
+  flex-wrap: wrap;
+  /* Card'lar ekrana sığmazsa alt satıra geç */
+  gap: 20px;
+  /* Card'lar arasında 20px boşluk bırak */
+}
+
+.mat-card-actions {
+  display: flex;
+  justify-content: center;
+  justify-content: flex-start;
+}
+
+.button-container {
+  display: flex;
+  align-items: center;
+  /* Dikey hizalamayı ayarlar */
+}
+
+.button-text {
+  margin-left: 8px;
+  /* İstenilen boşluğu sağlamak için buton ve metin arasında bir boşluk bırakır */
+  font-weight: bold;
+  /* Yazıyı kalın yapar */
+}
+
+.delete-button {
+  color: red;
+  position: relative;
+}
+
+.delete-button:before {
+  content: "Sil";
+  position: absolute;
+  top: -20px;
+  left: 0;
+  background-color: red;
+  color: white;
+  font-size: 12px;
+  padding: 2px 5px;
+  border-radius: 3px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.delete-button:hover:before {
+  opacity: 1;
+}
+
+.add-button {
+  position: relative;
+}
+
+.add-button:before {
+  content: "Yeni Ürün Ekle";
+  position: absolute;
+  top: -20px;
+  left: -10px;
+  background-color: #5df321;
+  color: black;
+  font-size: 12px;
+  padding: 2px 5px;
+  border-radius: 8px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.add-button:hover:before {
+  opacity: 1;
+}

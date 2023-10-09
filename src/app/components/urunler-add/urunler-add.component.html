@@ -1,0 +1,29 @@
+<div mat-dialog-content [align]="'center'">
+    <form [formGroup]="urunForm" style="margin-top: 25px;">
+      <h2>Yeni Ürün Ekle</h2>
+        <mat-form-field appearance="outline">
+            <mat-label>Ürünün adı</mat-label>
+            <input formControlName="urunAdi" matInput placeholder="yeni ürünün ismini girin">
+            <mat-icon matSuffix>free_breakfast</mat-icon>
+            <mat-hint></mat-hint>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Ürünün Fiyatı</mat-label>
+            <input formControlName="urunFiyat" matInput placeholder="yeni ürünün fiyatını girin">
+            <mat-icon matSuffix>attach_money</mat-icon>
+            <mat-hint></mat-hint>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Restaurant Resim</mat-label>
+            <input formControlName="restaurantImg" matInput placeholder="Ürün Resminin url'ni giriniz">
+            <mat-icon matSuffix>photo</mat-icon>
+        </mat-form-field>
+    </form>
+</div>
+
+<div mat-dialog-actions [align]="'center'">
+    <button mat-raised-button color="warn" mat-dialog-close>close</button>
+    <button mat-raised-button color="primary" (click)="addUrun()">{{actionBtn}}</button>
+</div>
+

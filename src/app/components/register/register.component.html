@@ -1,0 +1,98 @@
+<div class="backgroundImage_2"></div>
+<div class="backgroundImage_3"></div>
+<div class="backgroundImage"></div>
+<mat-card>
+   
+    
+    <mat-card-content>
+        <div mat-dialog-content class="registration-form">
+            <h2 class="form-title">Kayıt Ol
+                <hr>
+            </h2>
+           
+            <form [formGroup]="registerForm" (ngSubmit)="addUserAndAdress()">
+
+                <div class="form-container">
+                    <div class="form-left">
+
+                        <mat-form-field appearance="outline" class="form-field">
+                            <mat-label>Ad</mat-label>
+                            <input class="genis-input" formControlName="ad" matInput placeholder="Adınızı giriniz"
+                                maxlength="25">
+                            <mat-icon matSuffix>person</mat-icon>
+                            <mat-hint></mat-hint>
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline" class="form-field">
+                            <mat-label>Soyad</mat-label>
+                            <input class="genis-input" formControlName="soyad" matInput placeholder="Soyadınızı giriniz"
+                                maxlength="25">
+                            <mat-icon matSuffix>person</mat-icon>
+                            <mat-hint></mat-hint>
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline" class="form-field">
+                            <mat-label>Email</mat-label>
+                            <input class="genis-input" type="email" formControlName="email" matInput
+                                placeholder="Email giriniz" maxlength="50">
+                            <mat-icon matSuffix>email</mat-icon>
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline" class="form-field">
+                            <mat-label>Şifre</mat-label>
+                            <input class="genis-input" type="{{ showPassword ? 'text' : 'password' }}"
+                                formControlName="password" matInput placeholder="Şifre giriniz" maxlength="8">
+                            <mat-icon matSuffix (click)="toggleShowPassword()">
+                                {{ showPassword ? 'visibility' : 'visibility_off' }}
+                            </mat-icon>
+                            <!-- <mat-hint class="align-end" *ngIf="registerForm.get('password')?.invalid && (registerForm.get('password')?.dirty || registerForm.get('password')?.touched)">
+                                Şifre en az 8 karakterden oluşmalı ve en az bir küçük harf, bir büyük harf, bir rakam ve bir özel karakter içermelidir.
+                            </mat-hint> -->
+
+                            <div class="custom-hint" *ngIf="isPasswordHintVisible()">
+                                Şifre en az 8 karakterden oluşmalı ve en az bir küçük harf, bir büyük harf, bir rakam ve bir özel karakter içermelidir.
+                              </div>
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline" class="form-field">
+                            <mat-label>Tel</mat-label>
+                            <span matPrefix>+0&nbsp;</span>
+                            <input class="genis-input" type="tel" formControlName="tel" matInput
+                                placeholder="Telefon numaranızı giriniz" maxlength="10">
+                            <mat-icon matSuffix>call</mat-icon>
+                            <mat-hint></mat-hint>
+                        </mat-form-field>
+                    </div>
+                    <div class="form-right">
+
+                        <mat-form-field appearance="outline" class="form-field" style="margin-top: 30px;">
+                            <mat-label>Ev Adresi</mat-label>
+                            <textarea class="genis-input" formControlName="evAdresi" #adress1 maxlength="200" matInput
+                                placeholder="Ev adresinizi giriniz" maxlength="200"></textarea>
+                            <mat-icon matSuffix>person_pin_circle</mat-icon>
+                            <mat-hint [align]="'end'">{{ adress1.value.length }} / 200</mat-hint>
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline" class="form-field">
+                            <mat-label>İş Adresi</mat-label>
+                            <textarea class="genis-input" formControlName="isAdresi" #adress2 maxlength="200" matInput
+                                placeholder="İş adresinizi giriniz" maxlength="200"></textarea>
+                            <mat-icon matSuffix>business</mat-icon>
+                            <mat-hint [align]="'end'">{{ adress2.value.length }} / 200</mat-hint>
+                        </mat-form-field>
+                        <div class="button-container">
+                            <button mat-raised-button class="button-kaydol">Kaydet</button>
+                        </div>
+                        <span class="span-container">Ya da <br> Kayıtlı mısın?</span>
+                        <div class="button-container">
+                            <a routerLink="/login" mat-raised-button color="accent">Giriş Yap</a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!-- <mat-card-footer>
+            <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+          </mat-card-footer> -->
+    </mat-card-content>
+</mat-card>

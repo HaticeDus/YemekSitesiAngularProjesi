@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+.form-title {
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.registration-form {
+  text-align: center;
+  width: auto;
+  margin-top: -16px;
+}
+
+/* Kartın genişliğini belirlemek için (isteğe bağlı) */
+mat-card {
+  max-width: 1200px;
+  border: 2px solid #ccc;
+  /* Çerçevenin stilini ve rengini ayarlayın */
+  border-radius: 10px;
+  /* Çerçevenin köşe yuvarlatmasını belirleyin */
+  padding: 5px;
+  /* Kartın içeriğinden çerçeveye olan boşluğu belirleyin */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  /* Kartın gölgesini ayarlayın */
+  /* width: 500px; /* Dilediğiniz boyutu verebilirsiniz */
+  /*height: 400px; /* Dilediğiniz boyutu verebilirsiniz */
+  margin: 90px auto auto auto;
+  /* Yatayda ortalamak için 10px bottom boşluk (alt boşluk) verir */
+  /*margin: auto auto auto auto; (top,right,bottom,left)*/
+  /* Kartı ortalamak için */
+  z-index: 2;
+  /* margin: top 10px; */
+  opacity:0.89;
+
+  /* background-image: url('src/assets/images/registerBackground_2.jpg'); */
+  /* background-size: cover;
+  width: 100%; */
+  /* height: 100%; */
+
+}
+
+.backgroundImage {
+  background-image: url('src/assets/images/background_6.png');
+  /* Arka plan resmini belirtilen URL'den alır */
+  width: 100%; /* Elementin genişliği yüzde olarak ayarlanır */
+  height: 109%;/* Elementin yüksekliği yüzde olarak ayarlanır */
+  position: absolute;
+  /* Elementin konumu "position: absolute" ile belirtilir */
+  /* ile belirtilen element, içinde bulunduğu en yakın konumlandırılmış üst öğeye göre konumlanır ve normal akıştan çıkar. */
+  background-size: cover; /* Arka plan resminin boyutunu kaplamak için ölçekler */
+  margin-top: -12px; /* Elementin üst kenarını 12 piksel yukarı çeker */
+  background-position: center;
+}
+
+.backgroundImage_2{
+
+  /* background-image: url('src/assets/images/registerBackground_2.jpg'); */
+  background-image: url('src/assets/images/food-delivery.png');
+    position: absolute;
+    background-size: auto;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 28%;
+    height: 49%;
+    opacity: 0.4;
+    z-index: 3;
+    margin-left: 1101px;
+    margin-top: 308px;
+}
+
+.backgroundImage_3{
+
+  /* background-image: url('src/assets/images/registerBackground_2.jpg'); */
+  background-image: url('src/assets/images/order.png');
+  position: absolute;
+  background-size: 282px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: 13%;
+  height: 48%;
+  opacity: 0.4;
+  z-index: 3;
+  margin-left: 216px;
+  margin-top: -54px;
+}
+
+
+.form-title {
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+
+.form-container {
+  display: flex;
+  /* flex-wrap: wrap; */
+  /* flex-direction: column;
+  align-items: center;  */
+  /* margin-left: 343px; */
+}
+
+.form-left,
+.form-right {
+  flex: 1;
+  margin-right: 241px;/* Form-left için sağda boşluk */
+}
+
+.form-right{
+  margin-left: -211px;/* Form-right için solda boşluk */
+}
+
+
+.form-field {
+  width: 100%;
+  max-width: 300px;
+  margin-bottom: 20px;
+  /* İnput alanlarının arasındaki boşluğu ayarlamak için */
+  /* flex: 1 1 calc(50% - 10px); */
+
+}
+
+.form-field .mat-icon {
+  cursor: pointer;
+}
+
+.align-end {
+  align-self: flex-end;
+}
+
+/* Örneğin, formun üzerinde boşluk bırakmak için */
+.registration-form {
+  margin-top: 20px;
+}
+
+/* Form içindeki tüm input alanlarının genişliğini ayarlamak için */
+.genis-input {
+  width: 100%;
+}
+
+
+/* İcon ve Hint'i düzenlemek için */
+mat-icon {
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+mat-hint {
+  vertical-align: middle;
+}
+
+.button-kaydol {
+  background-color: green;
+  color: white;
+
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  /* Gerekirse düzenleyebilirsiniz */
+}
+
+.span-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px 0;
+  top: 0;
+  left: 0;
+  color: green;
+  opacity: 0.5;
+  font-size: 14px;
+}
+
+
+mat-progress-bar{
+  background-image: url('src/assets/images/registerBackground.jpg');
+  background-size: cover;
+}
+
+
+.custom-hint {
+  background-color: #fff;
+  color: #ff0000;
+  border: 1px solid #ff0000;
+  padding: 5px 10px;
+  border-radius: 4px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.form-field:hover .custom-hint,
+.genis-input:focus+.custom-hint {
+  opacity: 1;
+  transform: translateY(0);
+}

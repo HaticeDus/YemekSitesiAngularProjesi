@@ -1,0 +1,50 @@
+<div mat-dialog-content [align]="'center'">
+    <form [formGroup]="mergeForm" style="margin-top: 25px;">
+
+        <h2>Yeni Restaurant Ekle</h2>
+        <mat-form-field appearance="outline">
+
+            <mat-label>Restaurant Adı</mat-label>
+            <input formControlName="restAd" matInput placeholder="Restaurantın adını giriniz" maxlength="70">
+            <mat-icon matSuffix>restaurant</mat-icon>
+            <mat-hint></mat-hint>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Restaurant Adres</mat-label>
+            <textarea formControlName="restAdres" #adress1 maxlength="255" matInput
+                placeholder="Ev adresinizi giriniz"></textarea>
+            <mat-icon matSuffix>place</mat-icon>
+            <mat-hint [align]="'end'">{{adress1.value.length}} / 255</mat-hint>
+            <mat-hint></mat-hint>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Restaurant Tel</mat-label>
+            <span matPrefix>+0&nbsp;</span>
+            <input type="tel" formControlName="restTel" matInput placeholder="Restaurant tel" maxlength="10">
+            <mat-icon matSuffix>call</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Restaurant Resim</mat-label>
+            <input formControlName="restaurantImg" matInput placeholder="Restaurant Resminin url'ni giriniz">
+            <mat-icon matSuffix>photo</mat-icon>
+        </mat-form-field>
+
+        <!-- <mat-form-field appearance="outline">
+            <mat-label>Kategori Türü</mat-label>
+            <mat-icon matSuffix>category</mat-icon>
+            <mat-select formControlName="kategoriTuru">
+                <mat-option *ngFor="let item of categoryList" [value]="item.kategoriID">
+                    {{item.kategoriTuru}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field> -->
+    </form>
+</div>
+
+<div mat-dialog-actions [align]="'center'">
+    <button mat-raised-button color="warn" mat-dialog-close>close</button>
+    <button mat-raised-button color="primary" (click)="addREST()">{{actionBtn}}</button>
+</div>

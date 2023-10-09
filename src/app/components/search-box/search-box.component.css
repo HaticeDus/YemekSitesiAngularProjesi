@@ -1,0 +1,48 @@
+/* Stil search box div'i */
+#searchBox-div {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+
+    width: 540px;
+    height: 60px;
+    justify-content: center;
+    cursor:pointer;
+}
+
+
+#input-searchBox {
+    padding: 15px 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    outline: none;
+    width: 421px;
+    height: 17px;
+}
+
+
+#button-searchBox {
+    background-color: crimson;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    display: flex;
+}
+
+#button-searchBox:hover {
+
+    transform: scale(1.1);
+    cursor: pointer;
+    /* Kartın tıklanınca %10 büyümesini sağlar */
+}
+
+
+#search-icon {
+    margin-right: 8px;
+}

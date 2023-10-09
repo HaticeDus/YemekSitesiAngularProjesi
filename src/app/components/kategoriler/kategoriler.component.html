@@ -1,0 +1,89 @@
+<h1>KATEGORİLER
+    <mat-divider></mat-divider>
+    <section>
+        <!-- <div class="example-button-row">
+            <div class="example-flex-container">
+                <div class="example-button-container">
+                    <button mat-fab color="warn" aria-label="Example icon button with a delete icon"
+                        routerLink="kategoriAdd">
+                        <mat-icon> add </mat-icon>
+                    </button>
+                   
+                </div>
+            </div>
+        </div> -->
+        <!-- <a mat-raised-button color="warn" routerLink="kategoriAdd"> Yeni kategori Türü Ekle</a> -->
+        <!-- <a mat-raised-button color="accent" href="/kategoriAdd" (click)="goToKategoriAdd()> Yeni kategori Türü Ekle</a> -->
+        <button mat-raised-button color="accent" (click)="addKategoridialog()">Yeni kategori Türü Ekle</button>
+        <!-- <button mat-raised-button color="accent" [routerLink]="'/kategoriAdd'" (click)="addKategori()"  >Yeni kategori Türü Ekle</button> -->
+        <!-- <div class="example-button-container">
+            <a mat-fab color="warn" aria-label="Example icon button for adding a new category" href="/kategoriAdd">
+                <mat-icon>add</mat-icon>
+            </a>
+            Yeni kategori Türü Ekle
+        </div> -->
+    </section>
+</h1>
+<!-- <app-kategori-add></app-kategori-add> -->
+<div class="example-container mat-elevation-z8">
+    <table mat-table [dataSource]="kategorilerList">
+
+        <!-- kategorId Column -->
+        <ng-container matColumnDef="kategorId" sticky>
+            <th mat-header-cell *matHeaderCellDef> KATEGORİ ID </th>
+            <td mat-cell *matCellDef="let item"> {{item.kategoriID}} </td>
+        </ng-container>
+
+        <!-- kategoriTuru Column -->
+        <ng-container matColumnDef="kategoriTuru">
+            <th mat-header-cell *matHeaderCellDef> KATEGORİ ADI </th>
+            <td mat-cell *matCellDef="let item"> {{item.kategoriTuru}} </td>
+        </ng-container>
+
+        <!-- kategoriImg Column -->
+        <!-- <ng-container matColumnDef="kategoriImg"> -->
+            <!-- <th mat-header-cell *matHeaderCellDef> KATEGORİ RESİM </th> -->
+            <!-- <td mat-cell *matCellDef="let item"> {{item.kategoriImg}} </td> -->
+            <!-- <img src="item.kategoriImg" alt="Kategori Resmi"> -->
+        <!-- </ng-container> -->
+
+        <ng-container matColumnDef="kategoriImg">
+            <th mat-header-cell *matHeaderCellDef> KATEGORİ RESİM </th>
+            <td mat-cell *matCellDef="let item">
+              <!-- Resmi göstermek için img etiketini kullanın ve src özelliğine item.kategoriImg'yi ekleyin -->
+              <img src="{{ item.kategoriImg }}" alt="Kategori Resmi" class="kategoriResim">
+            </td>
+          </ng-container>
+
+        <!-- delete Column -->
+        <ng-container matColumnDef="delete">
+            <th mat-header-cell *matHeaderCellDef> DELETE </th>
+            <td mat-cell *matCellDef="let item"> <button mat-icon-button color="warn"
+                    (click)="deleteItems(item.kategoriID)">
+                    <mat-icon>
+                        delete
+                    </mat-icon>
+                </button></td>
+        </ng-container>
+
+
+        <!-- update Column -->
+        <ng-container matColumnDef="update">
+            <th mat-header-cell *matHeaderCellDef> UPDATE </th>
+            <td mat-cell *matCellDef="let item">
+                <button mat-icon-button color="primary" (click)="updateKategoridialog(item)">
+                    <mat-icon>
+                        edit
+                    </mat-icon>
+                </button>
+            </td>
+        </ng-container>
+
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    </table>
+
+
+</div>

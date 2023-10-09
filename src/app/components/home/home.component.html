@@ -1,0 +1,118 @@
+<div id="image-hand-wave"></div>
+<h1>{{ findUser ? 'Selam ' + findUser.ad : 'HOŞGELDİNİZ' }}</h1>
+
+<h3>Acıktın mı? Sana En Yakın Restaurantlardan Yemeğini Seçmeye Başla!</h3>
+<div id="swiper-opacity-div"></div>
+<swiper-container autoplay="true" slides-per-view="1" loop="true" css-mode="true">
+    <!--  navigation="true" pagination="true" pagination-clickable="true" mousewheel-force-to-axis="true" speed="500" autoplay="true" autoplay="true" -->
+    <swiper-slide>
+        <img src="assets/images/kebap.jpg" alt="photo of swiper">
+    </swiper-slide>
+    <swiper-slide>
+        <img src="assets/images/swiper2.jpg" alt="photo of swiper">
+    </swiper-slide>
+    <swiper-slide>
+        <img src="assets/images/swiper3.jpg" alt="photo of swiper">
+    </swiper-slide>
+    <swiper-slide>
+        <img src="assets/images/swiper4.jpg" alt="photo of swiper">
+    </swiper-slide>
+    <swiper-slide>
+        <img src="assets/images/swiper5.jpg" alt="photo of swiper">
+    </swiper-slide>
+    <swiper-slide>
+        <img src="assets/images/swiper6.jpg" alt="photo of swiper">
+    </swiper-slide>
+
+    <swiper-slide>
+        <img src="assets/images/swiper7.jpg" alt="photo of swiper">
+    </swiper-slide>
+
+    <swiper-slide>
+        <img src="assets/images/swiper8.jpg" alt="photo of swiper">
+    </swiper-slide>
+
+    <swiper-slide>
+        <img src="assets/images/swiper9.jpg" alt="photo of swiper">
+    </swiper-slide>
+
+    <swiper-slide>
+        <img src="assets/images/7.jpeg" alt="photo of swiper">
+    </swiper-slide>
+
+
+</swiper-container>
+
+
+<div id="searchBox">
+    <app-search-box (searchValueChanged)="onSearchValueChanged($event)"></app-search-box>
+</div>
+
+
+<mat-list class="mat-list">
+
+    <span class="mat-list-span"> KATEGORİLER</span>
+    <mat-divider></mat-divider>
+    <section>
+        <mat-list-item><app-kategori-home (cardClicked)="setKategoriID($event)"></app-kategori-home></mat-list-item>
+    </section>
+
+    <span class="mat-list-span"> RESTAURANTLAR</span>
+    <mat-divider></mat-divider>
+    <section>
+
+        <mat-list-item><app-restaurantlar-home [restaurantIDs]="restaurantIDs"
+                [searchTerm]="searchTerm"></app-restaurantlar-home></mat-list-item>
+    </section>
+
+</mat-list>
+
+
+
+<!-- <app-urunler [selectedKategoriID]="selectedKategoriID"></app-urunler> -->
+
+
+
+<!-- MAT-TAB-GROUP İPTAL! -->
+<!-- <mat-tab-group class="mat-tab-group" color="warn">
+    <mat-tab label="KATEGORİLER"> <app-kategori-home></app-kategori-home></mat-tab>
+    <mat-tab label="RESTAURANTLAR"><app-restaurantlar-home></app-restaurantlar-home></mat-tab>
+</mat-tab-group> -->
+
+<!-- STEPPER İPTAL! -->
+<!-- <mat-stepper #stepper orientation="vertical" animationDuration="1200" color="warn">
+
+    
+    <mat-step>
+        <ng-template matStepLabel>KATEGORİLER</ng-template>
+        <ng-template matStepContent>
+            <app-kategori-home (cardClicked)="goToNextStepRest($event)"></app-kategori-home>
+            <button mat-button matStepperNext>İLERİ</button>
+        </ng-template>
+    </mat-step>
+    <mat-step>
+        <ng-template matStepLabel>RESTAURANTLAR</ng-template>
+        <ng-template matStepContent>
+            <app-restaurantlar-home [selectedKategoriID]="selectedKategoriID"
+                (cardClicked)="goToNextStepMenu($event)"></app-restaurantlar-home>
+            <button mat-button matStepperPrevious>GERİ</button>
+            <button mat-button matStepperNext>İLERİ</button>
+        </ng-template>
+    </mat-step>
+
+    <mat-step>
+        <ng-template matStepLabel>MENÜLER</ng-template>
+        <ng-template matStepContent>
+            <app-menuler-dashboard [selectedRestaurantID]="selectedRestaurantID"></app-menuler-dashboard>
+            <button mat-button matStepperPrevious>GERİ</button>
+            <button mat-button matStepperNext>İLERİ</button>
+        </ng-template>
+    </mat-step>
+
+    <mat-step>
+        <ng-template matStepLabel>SEPETİM</ng-template>
+        <app-sepet></app-sepet>
+        <button mat-button matStepperPrevious>GERİ</button>
+        <button mat-button matStepperNext>SİPARİŞİ TAMAMLA</button>
+    </mat-step>
+</mat-stepper> -->

@@ -1,0 +1,42 @@
+<h1>MENU
+    <mat-divider></mat-divider>
+    <section>
+        <!-- <button mat-raised-button color="accent" (click)="addKategoridialog()">Yeni kategori Türü Ekle</button> -->
+    </section>
+</h1>
+
+<div class="example-container mat-elevation-z8">
+    <table mat-table [dataSource]="menuList">
+
+        <ng-container matColumnDef="menuID" sticky>
+            <th mat-header-cell *matHeaderCellDef> MENU ID </th>
+            <td mat-cell *matCellDef="let item"> {{item.menuID}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="menuAdi">
+            <th mat-header-cell *matHeaderCellDef> MENU ADI </th>
+            <td mat-cell *matCellDef="let item"> {{item.menuAdi}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="menuImg">
+            <th mat-header-cell *matHeaderCellDef> MENÜ RESİM </th>
+            <td mat-cell *matCellDef="let item">
+                <!-- Resmi göstermek için img etiketini kullanın ve src özelliğine item.kategoriImg'yi ekleyin -->
+                <img src="{{ item.menuImg }}" alt="Menu Resim" class="menuResim">
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="delete">
+            <th mat-header-cell *matHeaderCellDef> DELETE </th>
+            <td mat-cell *matCellDef="let item"> <button mat-icon-button color="warn"
+                    (click)="deleteItems(item.menuID)">
+                    <mat-icon>
+                        delete
+                    </mat-icon>
+                </button></td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</div>

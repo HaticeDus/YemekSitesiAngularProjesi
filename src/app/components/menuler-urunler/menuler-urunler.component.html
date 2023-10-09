@@ -1,0 +1,49 @@
+
+<!-- RestMenuComponent mergeMenulerList dizisine erişebilecek ve içindeki verileri kullanılacak -->
+<!-- <app-rest-menu [rest_restmenu_mergeList]="mergeMenulerList"></app-rest-menu>  -->
+<!-- rest_restmenu_mergeList -->
+<!-- mergeList -->
+
+<div class="card-container">
+    <ng-container *ngFor="let item of rest_restmenu_mergeList "> <!-- ; let i = index -->
+        <!-- <ng-container *ngIf="i === 0 || mergeList[i-1]?.menuID !== item.menuID"> </ng-container> -->
+        <mat-card class="example-card">
+            <mat-card-header>
+                <mat-card-title-group>
+                    <mat-card-title><strong>Menü Adı: </strong>{{ item.menuAdi }}</mat-card-title>
+                    <mat-card-subtitle><strong>Restaurant Adı: </strong>{{item.restaurantAd}}</mat-card-subtitle>
+                    <img mat-card-sm-image src="{{item.restaurantImg}}" alt="Photo of foods">
+                </mat-card-title-group>
+            </mat-card-header>
+            <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                <mat-expansion-panel-header>
+                    <mat-panel-title style="color: green;"><mat-icon>edit</mat-icon>edit</mat-panel-title>
+                    <!-- <mat-panel-description> Ürünler</mat-panel-description> -->
+                </mat-expansion-panel-header>
+                <mat-card-actions class="mat-card-actions">
+                    <div class="button-container">
+                        <button mat-icon-button color="accent" class="add-button" (click)="adddialog(item.menuID)">
+                            <mat-icon>add_circle</mat-icon>
+                        </button>
+                        <span class="button-text">ürün ekle</span>
+                    </div>
+                </mat-card-actions>
+                <div style="text-align: center;">
+                    <strong>Ürünler</strong>
+                </div>
+                <mat-card-content *ngFor="let urunler of mergeMenulerList">
+                    <ng-container *ngIf="urunler.menuID===item.menuID">
+                        <div class="item-container">
+                            <button mat-icon-button class="delete-button" style="color: red;"
+                                (click)="deleteMenulerID(urunler.menulerID)">
+                                <mat-icon>remove</mat-icon>
+                            </button>
+                            <mat-icon>keyboard_arrow_right</mat-icon>
+                            <span>{{ urunler.urunAdi}}</span>
+                        </div>
+                    </ng-container>
+                </mat-card-content>
+            </mat-expansion-panel>
+        </mat-card>
+    </ng-container>
+</div>

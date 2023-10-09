@@ -1,0 +1,116 @@
+<div class="page-container">
+    <div class="card-container-1">
+
+        <mat-card class="restaurant-card">
+            <mat-card-header>
+                <div mat-card-avatar class="restaurant-header-image"></div>
+                <mat-card-title> {{findedRest?.restaurantAd}}</mat-card-title>
+                <mat-card-subtitle>Restaurantlar</mat-card-subtitle>
+            </mat-card-header>
+            <img class="custom-card-image" mat-card-image src="{{ findedRest?.restaurantImg }}"
+                alt="{{findedRest?.restaurantAd}}">
+
+
+
+            <div class="mat-list-background">
+                <mat-list class="mat-list">
+                    <span class="mat-list-span"> MENÜLER</span>
+                    <mat-divider></mat-divider>
+                    <section>
+                        <div class="card-container-menu" *ngFor="let item of filteredMenuList">
+                            <div>
+                                <mat-card class="restaurant-card-menu">
+                                    <mat-card-header>
+                                        <div mat-card-avatar class="restaurant-header-image-menu"
+                                            [style.background-image]="'url(' + item.restaurantImg + ')'"></div>
+                                        <mat-card-title> {{item.menuAdi}}</mat-card-title>
+                                        <mat-card-subtitle>{{item.restaurantAd}}</mat-card-subtitle>
+                                    </mat-card-header>
+                                    <mat-card-content *ngFor="let urunler of mergeMenulerList">
+                                        <ng-container *ngIf="urunler.menuID===item.menuID">
+                                            <div class="item-container">
+                                                <mat-icon>keyboard_arrow_right</mat-icon>
+                                                <span class="span-urunler">{{ urunler.urunAdi}} </span>
+                                            </div>
+                                        </ng-container>
+                                    </mat-card-content>
+                                    <mat-card-title style="color: red;"> Menüye özel fiyat: {{
+                                        calculateMenuPrice(item.menuID)}} TL</mat-card-title>
+                                    <button mat-raised-button color="accent" (click)="MenuEkle(item)">Ekle</button>
+                                </mat-card>
+                            </div>
+                        </div>
+                    </section>
+
+                    <span class="mat-list-span-urun"> ÜRÜNLER</span>
+                    <mat-divider></mat-divider>
+                    <section>
+                        <div class="card-container-menu-urun" *ngFor="let item of filteredUrunList">
+                            <mat-card class="restaurant-card-urun">
+                                <div class="card-content">
+                                    <ng-container *ngIf="item.urunImg; else yedekResim">
+                                        <img class="custom-card-image-urun" mat-card-image [src]="item.urunImg"
+                                            alt="product image">
+                                    </ng-container>
+                                    <ng-template #yedekResim>
+                                        <img class="custom-card-image-urun-default" mat-card-image
+                                            src="assets/images/delivery-bike.png" alt="yedek ürün image">
+                                    </ng-template>
+                                    <div class="mat-card-content">
+                                        <mat-card-title id="urunAdi"> {{item.urunAdi}}</mat-card-title>
+                                        <mat-card-title id="urunFiyat"> {{item.urunFiyat}} TL</mat-card-title>
+                                    </div>
+                                </div>
+                                <button mat-raised-button color="accent" (click)="UrunEkle(item)"
+                                    [disabled]="isButtonDisabled">Ekle</button>
+                            </mat-card>
+                        </div>
+                    </section>
+                </mat-list>
+            </div>
+        </mat-card>
+    </div><!-- end of card-container-1 -->
+
+    <div class="card-container-2">
+
+        <mat-card class="card-sepet">
+            <mat-card-title class="mat-card-title-sepet" color="accent"> <mat-icon
+                    class="basket-icon">shopping_basket</mat-icon>Sepetim
+            </mat-card-title>
+
+            <mat-divider></mat-divider>
+
+            <mat-card-content>
+                <div class="div-item-menu" *ngFor="let item of apiServiceSEPET.sepetUrunGetir()">
+                    <button mat-icon-button class="btn-delete" matTooltip="Primary" color="primary"
+                        aria-label="Example icon-button with a heart icon">
+                        <mat-icon>delete</mat-icon>
+                    </button>{{item.urunAdi}} <span class="urunMenuFiyat"> {{item.urunFiyat}} TL</span>
+                    <mat-divider></mat-divider>
+                </div>
+
+                <div class="div-item-menu" *ngFor="let item of apiServiceSEPET.sepetMenuGetir()">
+                    <button mat-icon-button class="btn-delete" matTooltip="Primary" color="primary"
+                        aria-label="Example icon-button with a heart icon">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                    {{item.menuAdi}} <span class="urunMenuFiyat"> {{item.fiyat}} TL</span>
+                    <mat-divider></mat-divider>
+                </div>
+            </mat-card-content>
+        </mat-card>
+
+
+        <div class="btn-container-3">
+            <div>
+                <span class="span-sepet">Tutar: {{TotalFiyat()}} </span>
+            </div>
+
+            <div>
+                <button class="btn-sepetOnay" mat-raised-button color="accent">Sepeti Onayla</button>
+            </div>
+        </div> <!-- end of card-container-3 -->
+
+    </div> <!-- end of card-container-2 -->
+
+</div><!-- end of page-container -->

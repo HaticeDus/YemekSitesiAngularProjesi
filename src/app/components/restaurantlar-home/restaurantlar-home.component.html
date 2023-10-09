@@ -1,0 +1,26 @@
+<div id="background_1"></div>
+
+
+<!-- <swiper-container navigation="true" pagination="true" pagination-clickable="true" mousewheel-force-to-axis="true"
+    speed="500" autoplay="true" slides-per-view="4" loop="true" css-mode="true">
+    <swiper-slide></swiper-slide>
+</swiper-container> -->
+
+
+<div class="card-container">
+    <div *ngFor="let item of List">
+        <!-- <div *ngIf="selectedKategoriID==item.kategoriID"></div> -->
+            <div class="card-wrapper">
+                <mat-card class="restaurant-card" (click)="onCardClicked(item.restaurantID)"> 
+                    <mat-card-header>
+                        <div mat-card-avatar class="restaurant-header-image"></div>
+                        <mat-card-title> {{item.restaurantAd}}</mat-card-title>
+                        <mat-card-subtitle>Restaurantlar</mat-card-subtitle>
+                    </mat-card-header>
+                    <img class="custom-card-image" mat-card-image src="{{ item.restaurantImg }}"
+                        alt="{{item.restaurantAd}}">
+                </mat-card>
+        </div>
+    </div>
+</div>
+

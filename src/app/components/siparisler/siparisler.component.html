@@ -1,0 +1,64 @@
+<h1>SİPARİŞLER <mat-divider></mat-divider>
+    <section>
+        <!-- <button mat-raised-button color="accent" (click)="addKategoridialog()">Yeni kategori Türü Ekle</button> -->
+    </section>
+</h1>
+
+<div class="example-container mat-elevation-z8">
+    <table mat-table [dataSource]="siparisList">
+
+
+        <ng-container matColumnDef="siparisID" sticky>
+            <th mat-header-cell *matHeaderCellDef> SİPARİŞ ID </th>
+            <td mat-cell *matCellDef="let item"> {{item.siparisID}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="userID">
+            <th mat-header-cell *matHeaderCellDef> USER ID </th>
+            <td mat-cell *matCellDef="let item"> {{item.userID}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="urunID">
+            <th mat-header-cell *matHeaderCellDef> ÜRÜN ID </th>
+            <td mat-cell *matCellDef="let item"> {{item.urunID}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="menulerID">
+            <th mat-header-cell *matHeaderCellDef> MENÜLER ID </th>
+            <td mat-cell *matCellDef="let item"> {{item.menulerID}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="restaurantID">
+            <th mat-header-cell *matHeaderCellDef> RESTAURANT ID </th>
+            <td mat-cell *matCellDef="let item"> {{item.restaurantID}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="siparisTarih">
+            <th mat-header-cell *matHeaderCellDef> SİPARİŞ TARİHİ </th>
+            <td mat-cell *matCellDef="let item"> {{item.siparisTarih}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="siparisAdet">
+            <th mat-header-cell *matHeaderCellDef> SİPARİŞ ADET </th>
+            <td mat-cell *matCellDef="let item"> {{item.siparisAdet}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="siparisTutar">
+            <th mat-header-cell *matHeaderCellDef> SİPARİŞ TUTAR </th>
+            <td mat-cell *matCellDef="let item"> {{item.siparisTutar}} </td>
+        </ng-container>
+
+        <!-- <ng-container matColumnDef="delete">
+            <th mat-header-cell *matHeaderCellDef> DELETE </th>
+            <td mat-cell *matCellDef="let item"> <button mat-icon-button color="warn"
+                    (click)="deleteItems(item.menuID)">
+                    <mat-icon>
+                        delete
+                    </mat-icon>
+                </button></td>
+        </ng-container> -->
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</div>

@@ -1,0 +1,36 @@
+<h1>Restaurant Menüleri<mat-divider></mat-divider>
+    <section>
+        <!-- <button mat-raised-button color="accent" (click)="addKategoridialog()">Yeni kategori Türü Ekle</button> -->
+    </section>
+</h1>
+
+<div class="example-container mat-elevation-z8">
+    <table mat-table [dataSource]="rest_restmenu_mergeList">
+
+
+        <ng-container matColumnDef="restMenuID" sticky>
+            <th mat-header-cell *matHeaderCellDef> RESTAURANT MENU ID </th>
+            <td mat-cell *matCellDef="let item"> {{item.restMenuID}} </td>
+        </ng-container>
+
+
+        <ng-container matColumnDef="restaurantAd">
+            <th mat-header-cell *matHeaderCellDef> RESTAURANT ADI </th>
+            <td mat-cell *matCellDef="let item"> {{item.restaurantAd}} </td>
+        </ng-container>
+
+
+        <ng-container matColumnDef="menuAdi">
+            <th mat-header-cell *matHeaderCellDef> MENU ADI </th>
+            <td mat-cell *matCellDef="let item"> {{item.menuAdi}} </td>
+        </ng-container>
+
+
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    </table>
+    <!-- <app-menuler-home [rest_restmenu_mergeList]="rest_restmenu_mergeList"></app-menuler-home> -->
+
+</div>

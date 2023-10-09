@@ -1,0 +1,76 @@
+.header {
+  display: flex;
+  align-items: center;
+  font-family: 'Your_Nice_Font', sans-serif;
+  /* Replace 'Your_Nice_Font' with the desired font name */
+  font-size: 24px;
+  cursor: pointer;
+  margin-top: 16px;
+  margin-left: 64px;
+}
+
+/* .header mat-icon { */
+/*margin-right: 10px; /* Adjust the margin as needed */
+/* } */
+#image-brand {
+  position: absolute;
+  width: 46px;
+  height: 40px;
+  margin-top: -1px;
+  margin-left: 13px;
+}
+
+mat-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+
+
+.button-container {
+  display: flex;
+  align-items: center;
+  /* İtemları dikeyde hizalar */
+  gap: 0.1px;
+  /* İtemlar arasındaki boşluğu ayarlar, isteğe bağlı */
+  margin-left: auto;
+  /* Bu özellik ile içeriğin sağa yaslanmasını sağlarız */
+}
+
+.button-icon {
+  display: flex;
+  justify-content: center;
+  /* İconları yatayda hizalar */
+  align-items: center;
+  /* İconları dikeyde hizalar */
+}
+
+.button-text {
+  font-size: 14px;
+  margin-right: 30px;
+}
+
+.person-buttons {
+  display: flex;
+  align-items: center;
+  /* İtemları dikeyde hizalar */
+  gap: 0.1px;
+  /* İtemlar arasındaki boşluğu ayarlar, isteğe bağlı */
+  margin-left: 1050px;
+  ;
+  /* Bu özellik ile içeriğin sağa yaslanmasını sağlarız */
+}
+
+/*body {
+ /* background-image: url('src/assets/images/23.png');/* Arka plan resmi */
+/*opacity: 0.7;/* Siliklik derecesi (0.0 ile 1.0 arasında değer alır, 0.0 tamamen şeffaf, 1.0 tamamen opak) */
+/* background-size: center;/* Resmi tam olarak göstermek için */
+/* background-repeat: no-repeat;/* Resmin tekrar etmesini engeller */
+/* background-position: center center;/* Resmi yatay ve dikey eksende tam ortada tutar */
+/* background-size: 120%; */
+/*background-size: 200px 200px;
+  position: relative;/* z-index özelliği için gerekli */
+/*z-index: -1;/* Resmi en arkada gösterecek negatif değer */
+/*}*/

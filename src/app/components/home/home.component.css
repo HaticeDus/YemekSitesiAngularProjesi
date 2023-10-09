@@ -1,0 +1,123 @@
+h1 {
+    margin-top: 45px;
+    text-align: center;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 40px;
+}
+
+h3 {
+    position: absolute;
+    margin-top: 100px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 38px;
+    margin-inline-start: 18%;
+}
+
+#image-hand-wave {
+    background-image: url('src/assets/images/wave.png');
+    width: 75%;
+    height: 91%;
+    background-repeat: no-repeat;
+    position: absolute;
+    margin-left: -302px;
+    margin-top: 32px;
+    transform: scaleX(-1);
+    /*y eksenine göre yansıma*/
+    background-size: 33px;
+}
+
+swiper-container {
+    text-align: center;
+    align-items: center;
+    justify-items: center;
+    margin-top: -93px;
+    z-index: -5;
+    margin-bottom: 130px;
+}
+
+swiper-slide img {
+    width: 100%;
+    /* Resimlerin Swiper'ın genişliğini kaplaması için %100 olarak ayarlayın */
+    height: 425px;
+    /* Resimlerin oranını koruyarak otomatik olarak boyutlandırın */
+    object-fit: cover;
+}
+
+#swiper-opacity-div {
+    background-color: black;
+    position: absolute;
+    height: 425px;
+    width: 100%;
+    opacity: 0.6;
+    margin-top: -93px;
+    z-index: -4;
+}
+
+
+/* .mat-tab-group{
+    position: relative;
+    margin-top: 10px;
+} */
+
+/* mat-list {
+    position: relative;
+    margin-top: 10px;
+} */
+
+
+
+/* Stil mat-list */
+.mat-list {
+    text-align: center;
+    /* Elemanları ortala */
+    padding: 20px;
+    /* Kenar boşluğu */
+}
+
+/* Stil mat-list-item */
+.mat-list-item {
+    margin-bottom: 10px;
+    /* Elemanlar arasındaki boşluk */
+}
+
+.mat-list-span {
+    margin: 198px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+
+#searchBox {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+
+
+/* mat-stepper{
+    position: absolute;
+    margin-top: 45px; */
+/* margin-left: 39px; */
+/* width: 97.97%;
+    height: 0.1px; 
+    opacity: 0.89;
+} */
+
+/* #background_1{
+    
+     background-image: url('src/assets/images/dashboard.jpg');
+     position: absolute;
+     background-size: cover;
+     margin-top: -79px;
+     width: 100%;
+     height: 500%;
+     background-position: top;
+     z-index: -3;
+     opacity: 0.8;
+     object-fit: cover;
+} */

@@ -1,0 +1,16 @@
+<div mat-dialog-content [align]="'center'">
+    <form [formGroup]="kategoriForm" style="margin-top: 25px;">
+
+        <mat-form-field appearance="outline">
+            <mat-label>kategori Türü</mat-label>
+            <input formControlName="kategoriTuru" matInput placeholder="yeni kategori türünü gir">
+            <mat-icon matSuffix>category</mat-icon>
+            <mat-hint></mat-hint>
+        </mat-form-field>
+    </form>
+</div>
+
+<div mat-dialog-actions [align]="'center'">
+    <button mat-raised-button color="warn" mat-dialog-close>close</button>
+    <button mat-raised-button color="primary" (click)="updateKategori()">{{actionBtn}}</button>
+</div>
